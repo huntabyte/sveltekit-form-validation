@@ -42,6 +42,7 @@ const registerSchema = z
 export const actions = {
 	default: async ({ request }) => {
 		const formData = Object.fromEntries(await request.formData());
+		console.log('Form Data:', formData);
 
 		try {
 			const result = registerSchema.parse(formData);

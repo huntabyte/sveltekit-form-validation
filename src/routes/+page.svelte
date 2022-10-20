@@ -23,7 +23,7 @@
 			<label for="password" class="label">
 				<span class="label-text">Password</span>
 			</label>
-			<input type="password" name="password" class="input w-full max-w-xsinput-bordered" />
+			<input type="password" name="password" class="input w-full max-w-xs input-bordered" />
 			<label for="password" class="label">
 				<span class="label-text-alt text-error" hidden>Validation Label</span>
 			</label>

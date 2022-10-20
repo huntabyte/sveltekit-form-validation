@@ -28,7 +28,12 @@ const registerSchema = z
 		if (confirmPassword !== password) {
 			ctx.addIssue({
 				code: 'custom',
-				message: 'Confirm Password and Password must match',
+				message: 'Password and Confirm Password must match',
+				path: ['password']
+			});
+			ctx.addIssue({
+				code: 'custom',
+				message: 'Password and Confirm Password must match',
 				path: ['passwordConfirm']
 			});
 		}

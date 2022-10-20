@@ -27,7 +27,13 @@ const registerSchema = z
 	.superRefine(({ confirmPassword, password }, ctx) => {
 		if (confirmPassword !== password) {
 			ctx.addIssue({
-				message: 'Confirm Password and Password must match',
+				code: 'custom',
+				message: 'Password and Confirm Password must match',
+				path: ['password']
+			});
+			ctx.addIssue({
+				code: 'custom',
+				message: 'Password and Confirm Password must match',
 				path: ['passwordConfirm']
 			});
 		}

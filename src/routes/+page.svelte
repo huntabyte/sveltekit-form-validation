@@ -75,7 +75,6 @@
 					type="checkbox"
 					name="terms"
 					class="checkbox checkbox-primary {form?.errors?.terms ? 'border-error' : ''}"
-					value="accept"
 				/>
 				<span class="label-text">I accept the terms and conditions</span>
 			</label>

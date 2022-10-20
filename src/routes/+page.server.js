@@ -1,7 +1,7 @@
 import { z } from 'zod';
 
 export const registerSchema = z.object({
-	name: z.string().min(2, { message: 'Name is required' }).max(64).trim(),
+	name: z.string().min(1, { message: 'Name is required' }).max(64).trim(),
 	email: z
 		.string({ required_error: 'Email is required' })
 		.min(1, { message: 'Email is required' })
@@ -24,13 +24,16 @@ export const registerSchema = z.object({
 export const actions = {
 	default: async ({ request }) => {
 		const formData = Object.fromEntries(await request.formData());
-		console.log(formData);
 
 		try {
 			const result = registerSchema.parse(formData);
 		} catch (err) {
-			const { fieldErrors } = err.flatten();
-			console.log(fieldErrors);
+			const { fieldErrors: errors } = err.flatten();
+			const { password, passwordConfirm, ...data } = formData;
+			return {
+				data,
+				errors
+			};
 		}
 	}
 };

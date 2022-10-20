@@ -59,7 +59,9 @@
 			<input
 				type="password"
 				name="passwordConfirm"
-				class="input w-full max-w-xs {form?.errors?.password ? 'input-error' : 'input-bordered'}"
+				class="input w-full max-w-xs {form?.errors?.passwordConfirm
+					? 'input-error'
+					: 'input-bordered'}"
 			/>
 			<label for="passwordConfirm" class="label">
 				{#if form?.errors?.passwordConfirm}
@@ -72,7 +74,7 @@
 				<input
 					type="checkbox"
 					name="terms"
-					class="checkbox checkbox-primary {form?.errors?.terms ?? 'border-error'}"
+					class="checkbox checkbox-primary {form?.errors?.terms ? 'border-error' : ''}"
 					value="accept"
 				/>
 				<span class="label-text">I accept the terms and conditions</span>

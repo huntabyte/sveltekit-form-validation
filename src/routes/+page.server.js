@@ -17,12 +17,14 @@ export const registerSchema = z.object({
 		.string({ required_error: 'Confirm Password is required' })
 		.min(10, { message: 'Password must be at least 10 characters' })
 		.max(32, { message: 'Password must be less than 32 characters' })
-		.trim()
+		.trim(),
+	terms: z.enum(['accept'], { required_error: 'You must accept the terms and conditions' })
 });
 
 export const actions = {
 	default: async ({ request }) => {
 		const formData = Object.fromEntries(await request.formData());
+		console.log(formData);
 
 		try {
 			const result = registerSchema.parse(formData);

@@ -39,8 +39,11 @@
 		</div>
 		<div class="form-control w-full max-w-xs pb-2">
 			<label class="label cursor-pointer justify-start space-x-4">
-				<input type="checkbox" name="acceptTOS" class="checkbox checkbox-primary" />
+				<input type="checkbox" name="terms" class="checkbox checkbox-primary" value="accept" />
 				<span class="label-text">I accept the terms and conditions</span>
+			</label>
+			<label for="terms">
+				<span class="label-text-alt" hidden>Validation Label</span>
 			</label>
 		</div>
 		<div class="w-full max-w-xs">

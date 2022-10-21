@@ -4,14 +4,14 @@ This project was built in a [video](https://youtube.com/@huntabyte) on my YouTub
 
 # Get Started
 
-## Setup Starter Code
+### Setup Starter Code
 ```bash
 git clone --single-branch --branch starter https://github.com/huntabyte/sveltekit-form-validation.git
 ```
 
 ### OR
 
-## Final Source Code
+### Final Source Code
 Clone this repository
 ```bash
 git clone https://github.com/huntabyte/sveltekit-form-validation.git
